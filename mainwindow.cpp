@@ -24,3 +24,9 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_btnExit_clicked()
+{
+    exit(0);
+}
+
