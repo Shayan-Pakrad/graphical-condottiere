@@ -13,10 +13,40 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>B Nazanin</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>110</y>
+      <width>601</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Georgia</family>
+      <pointsize>60</pointsize>
+      <italic>true</italic>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+      <kerning>true</kerning>
+      <fontweight>ExtraBold</fontweight>
+     </font>
+    </property>
+    <property name="text">
+     <string>condottiere</string>
+    </property>
+   </widget>
+  </widget>
  </widget>
  <resources/>
  <connections/>
