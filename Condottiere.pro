@@ -27,4 +27,5 @@ DISTFILES += \
     assets/background.jpg \
     background.jpg
 
-RESOURCES +=
+RESOURCES += \
+    mainBackground.qrc
