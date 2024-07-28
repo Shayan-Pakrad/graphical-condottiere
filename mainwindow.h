@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "gamewindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -20,7 +21,11 @@ public:
 private slots:
     void on_btnExit_clicked();
 
+    void on_btnNewGame_clicked();
+
 private:
     Ui::MainWindow *ui;
+
+    GameWindow *gameWindow;
 };
 #endif // MAINWINDOW_H

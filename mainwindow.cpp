@@ -30,3 +30,11 @@ void MainWindow::on_btnExit_clicked()
     exit(0);
 }
 
+
+void MainWindow::on_btnNewGame_clicked()
+{
+    gameWindow = new GameWindow(this);
+    this->hide();
+    gameWindow->show();
+}
+
