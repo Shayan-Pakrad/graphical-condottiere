@@ -1,15 +1,11 @@
-#include "gamewindow.h"
-#include "ui_gamewindow.h"
+#include "initplayerswindow.h"
+#include "ui_initplayerswindow.h"
 
-GameWindow::GameWindow(QWidget *parent)
+InitPlayersWindow::InitPlayersWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::GameWindow)
+    , ui(new Ui::InitPlayersWindow)
 {
     ui->setupUi(this);
-
-    //open player initializer window
-    initPlayersWindow = new InitPlayersWindow(this);
-    initPlayersWindow->show();
 
     // set the fixed size of the screen
     this->setFixedSize(1000, 600);
@@ -22,7 +18,7 @@ GameWindow::GameWindow(QWidget *parent)
     this->setPalette(palette);
 }
 
-GameWindow::~GameWindow()
+InitPlayersWindow::~InitPlayersWindow()
 {
     delete ui;
 }
