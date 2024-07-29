@@ -2,7 +2,10 @@
 #define GAMEWINDOW_H
 
 #include <QMainWindow>
+
 #include "initplayerswindow.h"
+
+#include "Game.h"
 
 namespace Ui {
 class GameWindow;
@@ -22,6 +25,8 @@ private:
     Ui::GameWindow *ui;
 
     InitPlayersWindow *initPlayersWindow;
+
+    Game game;
 
 };
 

@@ -53,7 +53,7 @@ public:
     // Member functions
     void welcome();
     void startGame();
-    void initPlayers();
+    void initPlayers(std::vector<Player> players);
     void addPlayer(const Player& player);
     void sortPlayers();
     void showCards();

@@ -16,6 +16,10 @@ GameWindow::GameWindow(QWidget *parent)
 
 void GameWindow::executeRestOfConstructor() {
 
+    // initialize players with input names and ages at the initPlayersWindow
+    game.initPlayers(initPlayersWindow->players);
+
+
     // show the ui
     ui->setupUi(this);
 

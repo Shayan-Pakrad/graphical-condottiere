@@ -2,7 +2,6 @@
 
 // Constructor
 Game::Game(): currentBattle(nullptr), winner(nullptr), NeshaneSolhSetter("N") {
-    startGame();
 }
 // destructor
 Game::~Game() {
@@ -14,7 +13,6 @@ Game::~Game() {
 // Start the game by initializing and sorting players
 void Game::startGame() {
     welcome();
-    initPlayers();
     sortPlayers();
     showCards();
     while (true) {
@@ -45,29 +43,9 @@ void Game::welcome() {
 }
 
 // Initialize players
-void Game::initPlayers() {
-    std::cout << "Number of players: ";
-    int numberOfPlayers;
-    std::cin >> numberOfPlayers;
+void Game::initPlayers(std::vector<Player> players) {
 
-    for (int i = 0; i < numberOfPlayers; ++i) {
-        // Get player name
-        std::cout << "Player " << i + 1 << " name: ";
-        std::string name;
-        std::cin >> name;
-
-        // Get player age
-        std::cout << "Player " << i + 1 << " age: ";
-        int age;
-        std::cin >> age;
-
-        // Get player color
-        std::cout << "Player " << i + 1 << " color: ";
-        std::string color;
-        std::cin >> color;
-
-        // Add new player to players list
-        Player player{name, age, color};
+    for (auto player : players) {
         addPlayer(player);
     }
 }

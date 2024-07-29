@@ -33,15 +33,16 @@ void InitPlayersWindow::on_btnNext_clicked()
     }
 
     else {
-        this->player1Name = this->ui->txtPlayer1Name->text().toStdString();
-        this->player2Name = this->ui->txtPlayer2Name->text().toStdString();
-        this->player3Name = this->ui->txtPlayer3Name->text().toStdString();
-        this->player4Name = this->ui->txtPlayer4Name->text().toStdString();
 
-        this->player1Age = this->ui->numPlayer1Age->value();
-        this->player2Age = this->ui->numPlayer2Age->value();
-        this->player3Age = this->ui->numPlayer3Age->value();
-        this->player4Age = this->ui->numPlayer4Age->value();
+        Player player1{this->ui->txtPlayer1Name->text().toStdString(), this->ui->numPlayer1Age->value(), "blue"};
+        Player player2{this->ui->txtPlayer2Name->text().toStdString(), this->ui->numPlayer2Age->value(), "red"};
+        Player player3{this->ui->txtPlayer3Name->text().toStdString(), this->ui->numPlayer3Age->value(), "orange"};
+        Player player4{this->ui->txtPlayer4Name->text().toStdString(), this->ui->numPlayer4Age->value(), "white"};
+
+        players.push_back(player1);
+        players.push_back(player2);
+        players.push_back(player3);
+        players.push_back(player4);
 
         emit buttonClicked();
 

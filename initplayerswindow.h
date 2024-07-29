@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "Player.h"
+
 namespace Ui {
 class InitPlayersWindow;
 }
@@ -24,6 +26,8 @@ public:
     int player2Age;
     int player3Age;
     int player4Age;
+
+    std::vector<Player> players;
 
 signals:
     void buttonClicked();
