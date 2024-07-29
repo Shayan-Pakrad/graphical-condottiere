@@ -12,7 +12,6 @@ Game::~Game() {
 
 // Start the game by initializing and sorting players
 void Game::startGame() {
-    sortPlayers();
     showCards();
     while (true) {
         setNeshaneJangProvince();

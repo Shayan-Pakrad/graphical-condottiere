@@ -16,8 +16,9 @@ GameWindow::GameWindow(QWidget *parent)
 
 void GameWindow::executeRestOfConstructor() {
 
-    // initialize players with input names and ages at the initPlayersWindow
+    // initialize players with input names and ages at the initPlayersWindow then sort it
     game.initPlayers(initPlayersWindow->players);
+    game.sortPlayers();
 
 
     // show the ui
