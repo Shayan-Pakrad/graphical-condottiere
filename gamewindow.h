@@ -16,6 +16,8 @@ public:
     explicit GameWindow(QWidget *parent = nullptr);
     ~GameWindow();
 
+    void executeRestOfConstructor();
+
 private:
     Ui::GameWindow *ui;
 

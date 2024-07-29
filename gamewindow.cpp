@@ -5,11 +5,19 @@ GameWindow::GameWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::GameWindow)
 {
-    ui->setupUi(this);
-
     //open player initializer window
     initPlayersWindow = new InitPlayersWindow(this);
     initPlayersWindow->show();
+
+    // wait for the next button on initPlayersWindow to execute rest of the program
+    connect(initPlayersWindow, &InitPlayersWindow::buttonClicked, this, &GameWindow::executeRestOfConstructor);
+
+}
+
+void GameWindow::executeRestOfConstructor() {
+
+    // show the ui
+    ui->setupUi(this);
 
     // set the fixed size of the screen
     this->setFixedSize(1000, 600);
