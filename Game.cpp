@@ -1,4 +1,12 @@
 #include "Game.h"
+#include "showcarddialog.h"
+
+#include "QListWidgetItem"
+#include "ui_showcarddialog.h"
+
+#include <QString>
+#include <string>
+
 
 // Constructor
 Game::Game(): currentBattle(nullptr), winner(nullptr), NeshaneSolhSetter("N") {
@@ -56,27 +64,46 @@ void Game::sortPlayers() {
 void Game::showCards() {
     int numberOfPlayers = players.size();
     for (int i = 0; i < numberOfPlayers; i++) {
-        std::system("cls");
-
-        std::cin.get();
-
-        std::cout << "I Want Wo Show " << players[i].getName() << "'s Cards \n";
-        std::cout << "Press ENTER To Continue!";
-
-        std::cin.get();
-        std::system("cls");
 
         deck.deal(players[i]);
 
+        showCardDialog *dialog = new showCardDialog;
+
+
+        dialog->show();
+
+        dialog->ui->lblText->setText(QString::fromStdString("Here is " + players[i].getName() + "'s cards: "));
+
         std::vector<std::shared_ptr<Card>> playerCards = players[i].getCardsInHand();
-        std::cout << "Here is " << players[i].getName() << "'s cards :" << std::endl << std::endl;
+
         for(int j = 0; j < playerCards.size(); j++) {
-            std::cout << playerCards[j]->getName() << std::endl;
-            
+            QListWidgetItem *item = new QListWidgetItem(QString::fromStdString(playerCards[j]->getName()), dialog->ui->lstCards);
+            dialog->ui->lstCards->addItem(item);
         }
 
-        std::cout << std::endl << "Press ENTER To Continue!";
-        std::cin.get();
+
+
+        // std::system("cls");
+
+        // std::cin.get();
+
+        // std::cout << "I Want Wo Show " << players[i].getName() << "'s Cards \n";
+        // std::cout << "Press ENTER To Continue!";
+
+        // std::cin.get();
+        // std::system("cls");
+
+        // deck.deal(players[i]);
+
+        // std::vector<std::shared_ptr<Card>> playerCards = players[i].getCardsInHand();
+        // std::cout << "Here is " << players[i].getName() << "'s cards :" << std::endl << std::endl;
+        // for(int j = 0; j < playerCards.size(); j++) {
+        //     std::cout << playerCards[j]->getName() << std::endl;
+            
+        // }
+
+        // std::cout << std::endl << "Press ENTER To Continue!";
+        // std::cin.get();
 
     }
     

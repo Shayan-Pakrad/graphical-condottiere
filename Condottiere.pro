@@ -27,7 +27,8 @@ SOURCES += \
     gamewindow.cpp \
     initplayerswindow.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    showcarddialog.cpp
 
 HEADERS += \
     Bahar.h \
@@ -47,12 +48,14 @@ HEADERS += \
     Zemestan.h \
     gamewindow.h \
     initplayerswindow.h \
-    mainwindow.h
+    mainwindow.h \
+    showcarddialog.h
 
 FORMS += \
     gamewindow.ui \
     initplayerswindow.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    showcarddialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -20,6 +20,7 @@ void GameWindow::executeRestOfConstructor() {
     game.initPlayers(initPlayersWindow->players);
     game.sortPlayers();
 
+    game.showCards();
 
     // show the ui
     ui->setupUi(this);
